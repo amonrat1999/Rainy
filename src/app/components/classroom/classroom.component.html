@@ -1,0 +1,229 @@
+<div class="body-container">
+    <div class="body-wrapper">
+        <div class="body-content">
+
+            <div class="classroom">
+                <h1><svg xmlns="http://www.w3.org/2000/svg" width="50" height="35" fill="currentColor"
+                        class="bi bi-book-half" viewBox="0 0 16 16">
+                        <path
+                            d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                    </svg> Classroom
+
+
+
+                    <!-- Button เพิ่มข้อมูล modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>เพิ่มข้อมูล</button>
+
+                    <!-- Button Delete -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#exampleModalCenter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                            <path fill-rule="evenodd"
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                        </svg>Delete</button>
+                </h1>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล Classroom</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <a> ClassroomName : </a>
+                                <input type="text" [(ngModel)]="form.classroomName" placeholder="Enter Classroom Name">
+                            </div>
+                            <br>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" (click)="CreateClassroom()">ยืนยัน</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Modal Delete -->
+            <div class="modal" id="exampleModalCenter" tabindex="-10" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="border-bottom:1px solid red">
+                            <h3 class="modal-title" id="exampleModalLongTitle">Delete Classroom</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <input type="text" [(ngModel)]="classroomId" placeholder="Enter Classroom ID"><button
+                                    class="btn btn-outline-danger" style="margin-top: -40px;" (click)="GetDataClassroomId()">ค้นหา</button>
+                            </div>
+                            <div class="row">
+                                <a> ClassroomID : </a>
+                                <input type="text" [(ngModel)]="form.classroomId">
+                            </div>
+                            <div class="row">
+                                <a> ClassroomName : </a>
+                                <input type="text" [(ngModel)]="form.classroomName">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="modal-footer" style="border-top:1px solid red;">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                            <button type="button" class="btn btn-danger" (click)="DeletedClassroom()">Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- Modal Add Teacher -->
+            <div class="modal fade" id="exampleModalCenter-addT" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document" style="max-width: 700px;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="border-bottom:1px solid #8cf503">
+                            <h3 class="modal-title" id="exampleModalLongTitle">Add Teacher</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" *ngFor="let data of this.getDataTeacher" style="text-align: center;">
+                            <div class="row" style="margin-right: 10px; margin-left: px; background-color: #ebebeb;">
+                                <div class="col-3">
+                                    {{data.teacherName}}
+                                </div>
+                                <div class="col-8">
+                                    {{data.subjectTaught}}
+                                </div>
+                                <div class="col-1" style="margin-right: 0rem;">
+                                    <button type="button" class="btn btn-success" style="margin-left: -15px;"
+                                        (click)="AddTeacherInClassroom(data.teacherId)">Add</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="modal-footer" style="border-top:1px solid #8cf503;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Modal Add Student -->
+            <div class="modal fade" id="exampleModalCenter-addS" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document" style="max-width: 700px;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="border-bottom:1px solid #8cf503">
+                            <h3 class="modal-title" id="exampleModalLongTitle">Add Student</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" *ngFor="let data of this.getDataStudent" style="text-align: center;">
+                            <div class="row" style="margin-right: 10px; margin-left: px; background-color: #ebebeb;">
+                                <div class="col-11">
+                                    {{data.studentName}}
+                                </div>
+                                <div class="col-1" style="margin-right: 0rem;">
+                                    <button type="button" class="btn btn-success" style="margin-left: -15px;"
+                                        (click)="AddStudentInClassroom(data.studentId)">Add</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="modal-footer" style="border-top:1px solid #8cf503;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <table>
+                <thead style="text-align: center;">
+                    <tr class="table-primary">
+                        <th>Classroom ID</th>
+                        <th>Name</th>
+                        <th>Teacher ID</th>
+                        <th>Student ID</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of this.getDataClassroom">
+                        <td style="width: 350px;">{{data.classroomId}}</td>
+                        <td style="width: 160px;">{{data.classroomName}}</td>
+                        <td style="width: 300px; align-items: center; ">
+                            <div class="row" >
+                                <div class="col-9" *ngFor="let teacher of data.classTeacher">
+                                    <p>{{teacher.teacherName}}</p>
+                                </div>                            
+                            </div>
+                            
+                            <button type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#exampleModalCenter-addT"
+                            (click)="getClassroomIdOnModal(data.classroomId)"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
+                            </svg></button>
+                        </td>
+                        <td style="width: 350px;">
+                            <div class="row" *ngFor="let student of data.classStudent">
+                                <p>{{student.studentName}}</p>
+                            </div>
+                            <button type="button" class="btn btn-success" data-toggle="modal"
+                                data-target="#exampleModalCenter-addS"
+                                (click)="getClassroomIdOnModal(data.classroomId)"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
+                                </svg></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

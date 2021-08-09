@@ -1,0 +1,21 @@
+
+.body-container .body-wrapper .body-content h1{
+    margin-left: 15.1rem;
+    margin-bottom: 3rem;
+}
+
+.body-container .body-wrapper .body-content h1 svg{
+    margin-right: 5px;
+}
+
+.body-container .body-wrapper .body-content table{
+    margin: auto;
+    width: 1200px;
+    height: 180px;
+}
+
+.body-container .body-wrapper .body-content table tbody tr td{
+    color: black;
+    height: 40px;
+ }
+ 

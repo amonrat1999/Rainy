@@ -1,0 +1,148 @@
+<div class="body-container">
+    <div class="body-wrapper">
+        <div class="body-content">
+
+            <div class="teacher">
+
+                <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor"
+                        class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                    </svg>Teacher
+
+
+
+                    <!-- Button เพิ่มข้อมูล modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>เพิ่มข้อมูล</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล Teacher</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <a> ชื่อ-นามสกุล </a>
+                                        <input type="text" [(ngModel)]="form.teacherName"
+                                            placeholder="Enter Teacher Name">
+                                    </div>
+                                    <div class="row">
+                                        <a> เบอร์โทร </a>
+                                        <input type="text" [(ngModel)]="form.teacherTel"
+                                            placeholder="Enter Telephone Number">
+                                    </div>
+                                    <div class="row">
+                                        <a> วิชา </a>
+                                        <input type="text" [(ngModel)]="form.subjectTaught" placeholder="Enter Subject">
+                                    </div>
+                                    <br>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" (click)="AddDataTeacher()">ยืนยัน</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Button Edit -->
+                    <button type="button" class="btn btn-success" data-toggle="modal"
+                        data-target="#exampleModalCenter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                        </svg>Edit</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" style="border-bottom:1px solid red">
+                                    <h3 class="modal-title" id="exampleModalLongTitle">Delete Teacher</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row-1" style=" margin-bottom: -3rem; ">
+                                        <input type="text" [(ngModel)]="teacherId"
+                                            placeholder="Enter Teacher ID"><button class="btn btn-outline-danger"
+                                            style="margin-left: 22rem; margin-top: -6.4rem;"
+                                            (click)="GetdataTeacherByid()">ค้นหา</button>
+                                    </div>
+                                    <div class="row-1">
+                                        <a> ชื่อ-นามสกุล : </a>
+                                        <input type="text" [(ngModel)]="form.teacherName">
+                                    </div>
+                                    <div class="row-1">
+                                        <a> เบอร์โทร : </a>
+                                        <input type="text" [(ngModel)]="form.teacherTel">
+                                    </div>
+                                    <div class="row-1">
+                                        <a> วิชา : </a>
+                                        <input type="text" [(ngModel)]="form.subjectTaught">
+                                    </div>
+                                </div>
+                                <div class="modal-footer" style="border-top:1px solid red;  margin-top: 2rem;">
+                                    <button type="button" class="btn btn-danger" (click)="DeleteDataTeacher()">Delete</button>
+                                    <button type="button" class="btn btn-success" (click)="EditDataTeacher()">Edit</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </h1>
+            </div>
+
+
+
+            <table>
+                <thead style="text-align: center;">
+                    <tr class="table-primary">
+                        <th>Teacher ID</th>
+                        <th>Name</th>
+                        <th>Tel</th>
+                        <th>Subject</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let data of this.getDataTeacher">
+                        <td>{{data.teacherId}}</td>
+                        <td>{{data.teacherName}}</td>
+                        <td>{{data.teacherTel}}</td>
+                        <td>{{data.subjectTaught}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

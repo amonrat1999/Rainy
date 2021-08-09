@@ -1,0 +1,154 @@
+<div class="body-container">
+    <div class="body-wrapper">
+        <div class="body-content">
+            <div class="student">
+                <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor"
+                        class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path fill-rule="evenodd"
+                            d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                    </svg>Student
+
+                    <!-- Button เพิ่มข้อมูล modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>เพิ่มข้อมูล</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล Student</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row ">
+                                        <div class="col-3" style="padding: 0px  5px; margin-top: 15px;">
+                                            <a> ชื่อ-นามสกุล : </a>
+                                        </div>
+                                        <div class="col-9" style="padding: 0px;"><input type="text"
+                                                [(ngModel)]="form.studentName" placeholder="Enter Student Name"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3" style="padding: 0px  5px; margin-top: 15px;">
+                                            <a> อายุ : </a>
+                                        </div>
+                                        <div class="col-9" style="padding: 0px;">
+                                            <input type="text" [(ngModel)]="form.studentAge" placeholder="Enter Age">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3" style="padding: 0px  5px; margin-top: 15px;">
+                                            <a> เบอร์โทร : </a>
+                                        </div>
+                                        <div class="col-9" style="padding: 0px;">
+                                            <input type="text" [(ngModel)]="form.studentTel"
+                                                placeholder="Enter Telephone Number">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" (click)=" AddDataStudentId()">ยืนยัน</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Edit -->
+                    <div class="modal fade" id="exampleModal-1" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" style="border-bottom: 1px solid #28a745;">
+                                    <h3 class="modal-title" id="exampleModalLabel">Edit Student</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" style="padding: 1rem 2rem;">
+                                    <div class="row ">
+                                        <div class="col-3" style="padding: 0px  2px; margin-top: 15px;">
+                                            <a> ชื่อ-นามสกุล : </a>
+                                        </div>
+                                        <div class="col-9" style="padding: 0px;"><input type="text"
+                                                [(ngModel)]="form.studentName" placeholder="Enter Student Name"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3" style="padding: 0px  2px; margin-top: 15px;">
+                                            <a> อายุ : </a>
+                                        </div>
+                                        <div class="col-9" style="padding: 0px;">
+                                            <input type="text" [(ngModel)]="form.studentAge" placeholder="Enter Age">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3" style="padding: 0px  2px; margin-top: 15px;">
+                                            <a> เบอร์โทร : </a>
+                                        </div>
+                                        <div class="col-9" style="padding: 0px;">
+                                            <input type="text" [(ngModel)]="form.studentTel"
+                                                placeholder="Enter Telephone Number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer" style="border-top:1px solid #28a745;">
+                                    <button type="button" class="btn btn-success" (click)="EditDataStudent()"
+                                        data-dismiss="modal">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </h1>
+            </div>
+
+
+           
+
+            <table>
+                <thead style="text-align: center;">
+                    <tr class="table-primary">
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Tel</th>
+                        <th>Edit</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let data of this.getDataStudent">
+                        <td>{{data.studentId}}</td>
+                        <td>{{data.studentName}}</td>
+                        <td>{{data.studentAge}}</td>
+                        <td>{{data.studentTel}}</td>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal-1"
+                            (click)="GetDataStudentById(data.studentId)"
+                            style="margin-right: 30px; margin-top: 10px; margin-bottom: 10px; ">Edit</button>
+
+                        <button type="button" class="btn btn-danger" (click)="DeleteDataStudent(data.studentId)"
+                            style="margin-top: 10px; margin-bottom: 10px;">Delete</button>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

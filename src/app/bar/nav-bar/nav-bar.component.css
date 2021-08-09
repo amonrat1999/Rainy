@@ -1,0 +1,42 @@
+.navbar{
+    justify-content: flex-start;
+    padding: 0.5rem 3rem;
+}
+
+
+nav{
+    margin-bottom: 2rem;
+}
+nav div a{
+    color: black;
+    margin-left: 0.3rem;
+}
+nav div a:hover {
+    color: #2600ff;
+    text-decoration: underline;}
+    
+nav form input{
+    margin-left: 62rem;
+}
+
+.student svg{
+    width: 20px;
+    height: 36px;  
+}
+
+
+.teacher{
+    margin-left: 1.5rem;
+}
+.teacher svg{
+    width: 20px;
+    height: 36px; 
+}
+
+.classroom{
+    margin-left: 1.5rem;
+}
+.classroom svg{
+    width: 20px;
+    height: 36px; 
+}
